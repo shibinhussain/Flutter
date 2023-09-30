@@ -4,21 +4,24 @@ import 'package:flutter/material.dart';
 class GradientContainer extends StatelessWidget {
   const GradientContainer({super.key});
 
+  final startAlignment = Alignment.topLeft;
+  final endAlignment = Alignment.bottomRight;
+
   @override
   Widget build(context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
+          colors: const [
             Color.fromARGB(255, 3, 106, 25),
             Color.fromARGB(255, 183, 199, 11)
           ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          begin: startAlignment,
+          end: endAlignment,
         ),
       ),
       child: const Center(
-        child: StyledText(),
+        child: StyledText('Hello world!!!'),
       ),
     );
   }
